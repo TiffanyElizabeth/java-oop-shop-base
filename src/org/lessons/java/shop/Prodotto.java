@@ -24,9 +24,14 @@ public class Prodotto {
     }
 
     public double getFinalPrice() {
-        this.finalPrice = (this.basePrice * this.vat) + this.basePrice;
-        this.finalPrice = Math.round(this.finalPrice * 100.0) / 100.0;
-        return this.finalPrice;
+        if (vat == 0) {
+            this.finalPrice = this.basePrice;
+            return this.finalPrice;
+        } else {
+            this.finalPrice = (this.basePrice * this.vat) + this.basePrice;
+            this.finalPrice = Math.round(this.finalPrice * 100.0) / 100.0;
+            return this.finalPrice;
+        }
     }
 
     // constructor
