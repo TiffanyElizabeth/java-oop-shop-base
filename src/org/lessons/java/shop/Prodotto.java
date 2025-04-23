@@ -25,7 +25,8 @@ public class Prodotto {
 
     public double getFinalPrice() {
         this.finalPrice = (this.basePrice * this.vat) + this.basePrice;
-        return finalPrice;
+        this.finalPrice = Math.round(this.finalPrice * 100.0) / 100.0;
+        return this.finalPrice;
     }
 
     // constructor
